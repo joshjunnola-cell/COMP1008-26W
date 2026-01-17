@@ -76,7 +76,8 @@ public class Main {
  
  
         // TODO: Apply typecasting where necessary
- 
+        int highTempInt = (int)highTemp;
+        int lowTempInt = (int)lowTemp;
  
         /*
         STEP 4: Conditional statements
