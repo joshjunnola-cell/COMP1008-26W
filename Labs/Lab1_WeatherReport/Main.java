@@ -86,11 +86,38 @@ public class Main {
           - If precipitation >= 50%, suggest "Carry an umbrella"
           - If wind speed > 40 km/h, suggest "Windy conditions"
         */
- 
+        
  
         // TODO: Write if, if-else, or nested if statements to display tips
  
- 
+        System.out.println("\nWeather Tips:");
+        if (uvIndex >= 6) {
+            System.out.println("- High UV index detected today. Use sunscreen!");
+        }
+        if (precipitationChance.contains("%")) {
+            String percentStr = precipitationChance.replace("%", "").trim();
+            try {
+                int precipPercent = Integer.parseInt(percentStr);
+                if (precipPercent >= 50) {
+                    System.out.println("- High chance of precipitation. Carry an umbrella!");
+                }
+            }
+            catch (NumberFormatException e) {
+                // Do nothing if parsing fails
+            }
+        }
+        if (windSpeed.contains("km/h")) {
+            String windStr = windSpeed.replace("km/h", "").trim();
+            try {
+                int windSpeedValue = Integer.parseInt(windStr);
+                if(windSpeedValue > 40) {
+                    System.out.println("- Windy conditions expected today. Stay safe!");
+                }
+            }
+            catch (NumberFormatException e) {
+                // Do nothing if parsing fails
+            }
+        }
         /*
         STEP 5: Create a fullReport String
         - Combine all user inputs and tips into one formatted sentence or paragraph
