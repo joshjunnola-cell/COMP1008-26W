@@ -40,11 +40,34 @@ public class Main {
         - Validate numeric input using loops
         - Example: Ensure highTemp >= lowTemp
         */
- 
+        
  
         // TODO: Prompt user and read input
         // TODO: Use loops to validate high/low temperatures and UV index
- 
+        System.out.print("Enter today's weather conditions (e.g., Sunny/Cloudy/Rainy): ");
+        weatherConditions = input.nextLine();
+        System.out.print("Enter chance of precipitation: ");
+        precipitationChance = input.nextLine();
+        System.out.print("Enter wind speed (km/h): ");
+        windSpeed = input.nextLine();
+        System.out.print("Enter daily high temperature (°C): ");
+        highTemp = input.nextDouble();
+        System.out.print("Enter daily low temperature (°C): ");
+        lowTemp = input.nextDouble();
+
+        while(lowTemp > highTemp) {
+            System.out.println("ERROR: Lower temperature cannot be higher than the high temperature. Please re-enter.");
+            System.out.print("Enter daily low temperature (°C): ");
+            lowTemp = input.nextDouble();
+        }
+
+        System.out.print("Enter UV index (0-10+): ");
+        uvIndex = input.nextInt();
+        while(uvIndex < 0) {
+            System.out.println("ERROR: UV index cannot be negative. Please re-enter.");
+            System.out.print("Enter UV index (0-10+): ");
+            uvIndex = input.nextInt();
+        }
  
         /*
         STEP 3: Typecasting (if needed)
