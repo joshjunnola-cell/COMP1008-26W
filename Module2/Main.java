@@ -94,21 +94,64 @@ class Student {
         int count = 1;
         
         while(count <= (int)gpa) {
-            System.out.print(count + " ");
+            System.out.print(" " + count);
             count++;
         }
     }
  
+    // Step 7.1: Do-While Loop
+
+    void enterGPAs() {
+        Scanner input = new Scanner(System.in);
+        double gpaInput;
+        do {
+            System.out.print("Enter semester GPA - press -1 to stop.");
+            gpaInput = input.nextDouble();
+
+            if(gpaInput != -1) {
+                System.out.println("Recorded GPA: " + gpaInput);
+            }
+
+        }while(gpaInput != -1);
+        System.out.println("All semester GPAs recorded.");
+    }
  
     // STEP 8: For loop example
     void printMultiplesOfID() {
         // TODO: Use for loop to print multiples of ID
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(id * i + " ");
+        }
+        System.out.println();
     }
  
+
+    // Step 8.1 Enhanced For Loop: Used to loop through arrays or objections easily
+    // Also called for-each loop
+
+//for(dataType variable : arrayName) {}
+
+    void printSemesterGPA() {
+        double[] semesterGPA = {3.5, 3.7, 3.0};
+        System.out.println("Semester GPAs:");
+        for(double g : semesterGPA) {
+            System.err.print(g + " ");
+        }
+        System.out.println();
+    }
  
     // STEP 9: Increment / Decrement / Compound assignment example
     void updateGPA() {
         // TODO: Demonstrate ++, --, +=, -= with GPA
+        System.err.println("Original GPA: " + gpa);
+        gpa++;
+        System.out.println("Updated GPA after increment: " + gpa);
+        gpa += 0.5;
+        System.out.println("Updated GPA after addition assignment: " + gpa);
+        gpa--;
+        System.out.println("Updated GPA after decrement: " + gpa);
+        gpa -= 0.2;
+        System.out.println("Updated GPA after subtraction assignment: " + gpa);
     }
 }
  
@@ -141,5 +184,9 @@ public class Main {
         s1.checkProgram();
         s1.gradeDescription();
         s1.printNumbersUpToGPA();
+        s1.printMultiplesOfID();
+        s1.printSemesterGPA();
+        s1.enterGPAs();
+        s1.updateGPA();
     }
 }
