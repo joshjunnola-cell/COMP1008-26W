@@ -123,19 +123,19 @@ public class Main {
         - Combine all user inputs and tips into one formatted sentence or paragraph
         - Use String concatenation (+) or String.format()
         */
-        String fullReport = String.format(
-            "\nToday's Weather Report:\n" +
-            "Conditions: %s\n" + weatherConditions +
-            "Chance of Precipitation: %s\n" + precipitationChance +
-            "Wind Speed: %s\n" + windSpeed +
-            "\n High Temperature: %d°C\n" + highTempInt +
-            " Low Temperature: %d°C\n" + lowTempInt +
-            "\n UV Index: %d\n" + uvIndex
-        );
-        
  
         // TODO: Construct your full weather report here
- 
+        String fullReport = String.format(
+            "\nToday's Weather Report:\n" +
+            "Conditions: %s\n" +
+            "Chance of Precipitation: %s\n" +
+            "Wind Speed: %s\n" +
+            "High Temperature: %d°C\n" +
+            "Low Temperature: %d°C\n" +
+            "UV Index: %d\n",
+            weatherConditions, precipitationChance, windSpeed, highTempInt, lowTempInt, uvIndex
+        );
+
  
         /*
         STEP 6: Print the full weather report
@@ -143,7 +143,7 @@ public class Main {
  
  
         // TODO: Output your report using System.out.println()
- 
+        System.out.println(fullReport);
  
         /*
         STEP 7: Optional extra challenge
@@ -153,7 +153,41 @@ public class Main {
  
  
         // TODO: Implement loop for multiple reports
- 
+        System.out.print("Would you like to enter another weather report? (yes/no): ");
+        String anotherReport = input.next();
+        
+        while(anotherReport.equalsIgnoreCase("yes")) {
+            input.nextLine();
+            System.out.print("Enter today's weather conditions (e.g., Sunny/Cloudy/Rainy): ");
+            weatherConditions = input.nextLine();
+            System.out.print("Enter chance of precipitation: ");
+            precipitationChance = input.nextLine();
+            System.out.print("Enter wind speed (km/h): ");
+            windSpeed = input.nextLine();
+            System.out.print("Enter daily high temperature (°C): ");
+            highTemp = input.nextDouble();
+            System.out.print("Enter daily low temperature (°C): ");
+            lowTemp = input.nextDouble();
+
+            while(lowTemp > highTemp) {
+                System.out.println("ERROR: Lower temperature cannot be higher than the high temperature. Please re-enter.");
+                System.out.print("Enter daily low temperature (°C): ");
+                lowTemp = input.nextDouble();
+            }
+
+            System.out.print("Enter UV index (0-10+): ");
+            uvIndex = input.nextInt();
+            while(uvIndex < 0) {
+                System.out.println("ERROR: UV index cannot be negative. Please re-enter.");
+                System.out.print("Enter UV index (0-10+): ");
+                uvIndex = input.nextInt();
+            } 
+            System.out.print("Would you like to enter another weather report? (yes/no): ");
+            anotherReport = input.next();
+            while(anotherReport.equalsIgnoreCase("no")) {
+                break;
+            }          
+        }
  
         input.close();
     }
