@@ -123,7 +123,16 @@ public class Main {
         - Combine all user inputs and tips into one formatted sentence or paragraph
         - Use String concatenation (+) or String.format()
         */
- 
+        String fullReport = String.format(
+            "\nToday's Weather Report:\n" +
+            "Conditions: %s\n" + weatherConditions +
+            "Chance of Precipitation: %s\n" + precipitationChance +
+            "Wind Speed: %s\n" + windSpeed +
+            "\n High Temperature: %d°C\n" + highTempInt +
+            " Low Temperature: %d°C\n" + lowTempInt +
+            "\n UV Index: %d\n" + uvIndex
+        );
+        
  
         // TODO: Construct your full weather report here
  
