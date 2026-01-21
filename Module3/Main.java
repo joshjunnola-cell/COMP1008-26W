@@ -67,7 +67,6 @@ public class Main {
         int product = multiplyNumbers (a, b);
         return sum + product;
     }
-}
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -78,34 +77,50 @@ public class Main {
  
         // STEP 1: Call a method to greet the user
         // Example: greetUser();
+        greetUser();
  
  
         // STEP 2: Call a method that adds two numbers and returns the sum
         // Example: addNumbers(?, ?);
- 
+        int sum = addNumbers(77, 19);
+        System.out.println("Sum of 77 and 19 is: " + sum);
  
         // STEP 3: Call a method that multiplies two numbers and returns the product
         // Example: multiplyNumbers(?, ?);
- 
+        int product = multiplyNumbers(19, 17);
+        System.out.println("Product of 19 and 17 is: " + product);
  
         // STEP 4: Call a method that checks if a number is positive and even using logical operators
         // Example: isPositiveAndEven(?);
- 
+
+        boolean check = isPositiveAndEven(12);
+        System.out.println("Is 12 positive and even? " + check);
  
         // STEP 5: Call overloaded methods (same name, different parameters)
         // Example: displayInfo();
         // Example: displayInfo("John");
         // Example: displayInfo("John", 25);
  
+        displayInfo();
+        displayInfo("Josh");
+        displayInfo("John", 24);
  
         // STEP 6: Enum usage demo
         // Example: Choice userChoice = Choice.ROCK;
         // Example: Choice computerChoice = Choice.SCISSORS;
- 
+        
+        Choice userChoice = Choice.ROCK;
+        Choice computerChoice = Choice.SCISSORS;
+        showChoice("Player", userChoice);
+        showChoice("Computer", computerChoice);
  
         // STEP 7: Method call stack demo by calling other methods
         // Example: sumAndMultiply(?, ?);
  
+        int result = sumAndMultiply(3, 5);
+        System.out.println("Sum and Multiply result = " + result);
+        
  
         scanner.close();
     }
+}
