@@ -1,19 +1,26 @@
 package Assignments.Assignment1;
 
-import java.util.Arrays;
-
-public class LibraryManager {
 //     Description
 // You will create a Library Book Management System in Java. This program allows users to manage book records using classes, loops, arrays/ArrayLists, and control statements. You will use encapsulation to protect book information and loops/conditionals for user interaction.
 
-// Requirements
-// Create a Book class (Encapsulation & Advanced Class Components)
-// Private fields: title (String), author (String), isbn (String), available (boolean)
-// Default constructor and parameterized constructor
-// Getters and setters with validation:
-// title and author cannot be empty
-// isbn must follow a simple pattern (e.g., 10 or 13 characters)
-// displayInfo() method to print book details
+class Book {
+
+        // Requirements
+        // Create a Book class (Encapsulation & Advanced Class Components)
+        // Private fields: title (String), author (String), isbn (String), available (boolean)
+        // Default constructor and parameterized constructor
+        // Getters and setters with validation:
+        // title and author cannot be empty
+        // isbn must follow a simple pattern (e.g., 10 or 13 characters)
+        // displayInfo() method to print book details
+
+    private String title = "";
+    private String author = "";
+    private String isbn = "";
+    private boolean available = true;
+}
+
+public class LibraryManager {
 
 // 2.Main Program — LibraryManager.java
 
@@ -38,6 +45,7 @@ public class LibraryManager {
 // Use loops to continuously show the menu until the user chooses Exit
 // Use if-else or switch to handle menu options
 // Validate all user input using loops and conditionals
+
 // 4.Additional Features (Arrays & ArrayLists)
 
 // When displaying books, show the count of available vs checked-out books
