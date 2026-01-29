@@ -3,21 +3,34 @@ package Assignments.Assignment1;
 //     Description
 // You will create a Library Book Management System in Java. This program allows users to manage book records using classes, loops, arrays/ArrayLists, and control statements. You will use encapsulation to protect book information and loops/conditionals for user interaction.
 
+// Create a Book class (Encapsulation & Advanced Class Components)
 class Book {
 
-        // Requirements
-        // Create a Book class (Encapsulation & Advanced Class Components)
-        // Private fields: title (String), author (String), isbn (String), available (boolean)
-        // Default constructor and parameterized constructor
-        // Getters and setters with validation:
         // title and author cannot be empty
         // isbn must follow a simple pattern (e.g., 10 or 13 characters)
         // displayInfo() method to print book details
 
+    // Private fields: title (String), author (String), isbn (String), available (boolean)
     private String title = "";
     private String author = "";
     private String isbn = "";
     private boolean available = true;
+
+    // Default constructor and parameterized constructor
+    public Book (String title, String author, String isbn){
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+    // Getters and setters with validation:
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public String getIsbn() { return isbn; }
+    public boolean isAvailable() { return available; }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 }
 
 public class LibraryManager {
