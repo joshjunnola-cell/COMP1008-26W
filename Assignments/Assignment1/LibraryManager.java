@@ -6,7 +6,6 @@ package Assignments.Assignment1;
 // Create a Book class (Encapsulation & Advanced Class Components)
 class Book {
 
-        // title and author cannot be empty
         // isbn must follow a simple pattern (e.g., 10 or 13 characters)
         // displayInfo() method to print book details
 
@@ -22,7 +21,9 @@ class Book {
         this.author = author;
         this.isbn = isbn;
     }
+
     // Getters and setters with validation:
+    // title and author cannot be empty
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getIsbn() { return isbn; }
@@ -30,6 +31,26 @@ class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+    
+    public void setTitle(String title) {
+        if(title != null){
+            this.title = title;
+        }else{
+            System.out.println("Error: Title cannot be empty");
+        }
+    }
+
+    public void setAuthor(String author) {
+        if(author != null){
+            this.author = author;
+        }else{
+            System.out.println("Error: Author cannot be empty.");
+        }
+    }
+
+    public void displayInfo() {
+
     }
 }
 
