@@ -6,7 +6,7 @@ package Assignments.Assignment1;
 // Create a Book class (Encapsulation & Advanced Class Components)
 class Book {
 
-        // isbn must follow a simple pattern (e.g., 10 or 13 characters)
+        
         // displayInfo() method to print book details
 
     // Private fields: title (String), author (String), isbn (String), available (boolean)
@@ -24,6 +24,7 @@ class Book {
 
     // Getters and setters with validation:
     // title and author cannot be empty
+    // isbn must follow a simple pattern (e.g., 10 or 13 characters)
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getIsbn() { return isbn; }
@@ -49,8 +50,19 @@ class Book {
         }
     }
 
-    public void displayInfo() {
+    public void setIsbn(String isbn) {
+        if(isbn != null && (isbn.length() == 10 || isbn.length() == 13)) {
+            this.isbn = isbn;
+        }else{
+            System.out.println("Error: ISBN must be 10 or 13 characters.");
+        }
+    }
 
+    public void displayInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Available: " + (available ? "Yes" : "No"));
     }
 }
 

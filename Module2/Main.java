@@ -114,6 +114,7 @@ class Student {
 
         }while(gpaInput != -1);
         System.out.println("All semester GPAs recorded.");
+        input.close();
     }
  
     // STEP 8: For loop example
