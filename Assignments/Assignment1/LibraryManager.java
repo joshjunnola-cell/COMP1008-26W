@@ -1,13 +1,10 @@
 package Assignments.Assignment1;
 
-//     Description
-// You will create a Library Book Management System in Java. This program allows users to manage book records using classes, loops, arrays/ArrayLists, and control statements. You will use encapsulation to protect book information and loops/conditionals for user interaction.
+import java.util.ArrayList;
+import java.util.Scanner;
 
-// Create a Book class (Encapsulation & Advanced Class Components)
+//book class
 class Book {
-
-        
-        // displayInfo() method to print book details
 
     // Private fields: title (String), author (String), isbn (String), available (boolean)
     private String title = "";
@@ -23,8 +20,6 @@ class Book {
     }
 
     // Getters and setters with validation:
-    // title and author cannot be empty
-    // isbn must follow a simple pattern (e.g., 10 or 13 characters)
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getIsbn() { return isbn; }
@@ -34,6 +29,7 @@ class Book {
         this.available = available;
     }
     
+    // title and author cannot be empty
     public void setTitle(String title) {
         if(title != null){
             this.title = title;
@@ -50,6 +46,7 @@ class Book {
         }
     }
 
+    // isbn must follow a simple pattern (e.g., 10 or 13 characters)
     public void setIsbn(String isbn) {
         if(isbn != null && (isbn.length() == 10 || isbn.length() == 13)) {
             this.isbn = isbn;
@@ -58,6 +55,7 @@ class Book {
         }
     }
 
+    // displayInfo() method to print book details
     public void displayInfo() {
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
@@ -69,23 +67,67 @@ class Book {
 public class LibraryManager {
 
 // 2.Main Program — LibraryManager.java
+    
+    public static void main(String[] args) {
 
-// Use an ArrayList to store multiple Book objects
-// Provide a menu-driven interface for the user:
-//                                                       1.  Add a new book
+        /*  Use an ArrayList to store multiple Book objects
+        Provide a menu-driven interface for the user that:
+        Includes adding a new book, display all books, display available books, search by author,
+        checkout a book (sets to false), return a book (sets to true), exit */
 
-//                                                       2. Display all books
+        ArrayList<Book> books = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        
+        int choice = 0;
 
-//                                                       3. Display all available books
+        while(choice != 7){
+            System.out.println("\n==== Library Menu ====");
+            System.out.println("1. Add a new book");
+            System.out.println("2. Display all books");
+            System.out.println("3. Display available books");
+            System.out.println("4. Search books by author");
+            System.out.println("5. Check out a book");
+            System.out.println("6. Return a book");
+            System.out.println("7. Exit menu");
+            System.out.print("Enter your choice: ");
 
-//                                                       4 . Search books by author
+            choice = scanner.nextInt();
+            scanner.nextLine();  
 
-//                                                       5. Check out a book (set available to false)
+            switch (choice) {
+                case 1:
+                    
+                    break;
 
-//                                                       6 .Return a book (set available to true)
+                case 2:
 
-//                                                       7 Exit
+                    break;
 
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+            
+                case 6:
+
+                    break;
+                
+                case 7:
+                    System.out.println("Exiting Library program.");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Try again.");
+
+            }
+        }
 // 3.Menu Functionality (Control & Iteration)
 
 // Use loops to continuously show the menu until the user chooses Exit
@@ -96,4 +138,6 @@ public class LibraryManager {
 
 // When displaying books, show the count of available vs checked-out books
 // Optional: Sort the ArrayList by title before displaying
+        scanner.close();
+    }
 }
