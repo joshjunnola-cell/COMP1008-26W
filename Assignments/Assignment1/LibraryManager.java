@@ -95,34 +95,113 @@ public class LibraryManager {
             scanner.nextLine();  
 
             switch (choice) {
+                //For collecting book information
                 case 1:
+                    System.out.println("Enter book title: ");
+                    String title = scanner.nextLine();
+
+                    while (title.trim().isEmpty()) {
+                        System.out.println("Title cannot be left empty. Enter again: ");
+                        title = scanner.nextLine();
+                    }
+
+                    System.out.println("Enter author name: ");
+                    String author = scanner.nextLine();
+
+                    while (author.trim().isEmpty()) {
+                        System.out.println("Author cannot be left empty. Enter again: ");
+                        author = scanner.nextLine();
+                    }
+
+                    System.out.println("Enter ISBN (10 or 13 digit): ");
+                    String isbn = scanner.nextLine();
+
+                    while (!(isbn.length() == 10 || isbn.length() == 13)) {
+                        System.out.print("Invalid ISBN. Must be 10 or 13 characters: ");
+                        isbn = scanner.nextLine();
+                    }
+
+                    //creates and adds the book for later use
+                    Book newBook = new Book(title, author, isbn);
+                    books.add(newBook);
+
+                    System.out.println("Book added successfully");
+                    break;
+
+                //if user wants to display all available books
+                case 2:
+                    if(books.isEmpty()){
+                        System.out.println("No books to display yet.");
+                        break;
+                    }
+
+                    System.out.println("\n==== All Books ====");
+
+                    int availableBooks = 0;
+                    int checkedOut = 0;
+
+                    for(Book b : books){
+                        b.displayInfo();
+                        
+                        if(b.isAvailable()){
+                            availableBooks++;
+                        }else{
+                            checkedOut++;
+                        }
+                    }
+
+                    System.out.println("Total books: " + books.size());
+                    System.out.println("Available: " + availableBooks);
+                    System.out.println("Checked out: " + checkedOut);
+                    break;
+
+                //display currently available books
+                case 3:
+                    if(books.isEmpty()){
+                        System.out.println("No books to display yet.");
+                        break;
+                    }
+
+                    System.out.println("\n==== Available Books ====");
+                    int count = 0;
+
+                    for(Book b: books){
+                        if(b.isAvailable()){
+                            b.displayInfo();
+                            System.out.println("-------------");
+                            count++;
+                        }
+                    }
+                    
+                    if(count == 0){
+                        System.out.println("No available books at the moment.");
+                    }else{
+                        System.out.println("Total available books: " + count);
+                    }
+
+                    break;
+                
+                //search by author name
+                case 4:
                     
                     break;
 
-                case 2:
-
-                    break;
-
-                case 3:
-
-                    break;
-
-                case 4:
-
-                    break;
-
+                //Allows user to checkout a book
                 case 5:
 
                     break;
             
+                //Allows users to return books
                 case 6:
 
                     break;
                 
+                //allows user to exit the program
                 case 7:
                     System.out.println("Exiting Library program.");
                     break;
 
+                //catches if invalid entry input
                 default:
                     System.out.println("Invalid choice. Try again.");
 
