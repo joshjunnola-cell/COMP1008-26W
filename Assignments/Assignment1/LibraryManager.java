@@ -183,12 +183,55 @@ public class LibraryManager {
                 
                 //search by author name
                 case 4:
-                    
+                    if(books.isEmpty()){
+                        System.out.println("No author information to search by in database.");
+                        break;
+                    }
+
+                    while (true){
+                        System.out.println("Enter author name to search: ");
+                        String search = scanner.nextLine().trim().toLowerCase();
+
+                        int bookMatch = 0;
+
+                        System.out.println("==== Search Results ====");
+
+                        for(Book b: books){
+                            String bookAuthor = b.getAuthor().toLowerCase();
+
+                            if(bookAuthor.contains(search)){
+                            b.displayInfo();
+                            bookMatch++;
+                        }
+                    }
+                    if(bookMatch == 0) {
+                        System.out.println("No books found for that author.");
+                    }else{
+                        System.out.println("Total matches: " + bookMatch);
+                    }
+
+                    String searchAgain = "";
+                    while(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                        System.out.println("Search again? Enter yes/no: ");
+                        searchAgain = scanner.nextLine().trim().toLowerCase();
+
+                        if(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                            System.out.println("Please enter 'yes' or 'no': ");
+                        }
+                    }
+                    if(searchAgain.equals("no")){
+                        break;
+                    }
+                }
                     break;
 
                 //Allows user to checkout a book
                 case 5:
-
+                    if(books.isEmpty()){
+                        System.out.println("No author information to search by in database.");
+                        break;
+                    }
+                    
                     break;
             
                 //Allows users to return books
