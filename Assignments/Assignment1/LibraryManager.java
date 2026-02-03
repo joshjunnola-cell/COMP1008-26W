@@ -227,11 +227,76 @@ public class LibraryManager {
 
                 //Allows user to checkout a book
                 case 5:
-                    if(books.isEmpty()){
-                        System.out.println("No author information to search by in database.");
+                    if(books.isEmpty()){ //default if no books in library
+                        System.out.println("No books in library yet.");
                         break;
                     }
-                    
+
+                    while (true){ 
+                        System.out.println("Enter a part of the book title or full title to check out: ");
+                        String search = scanner.nextLine().trim().toLowerCase();
+
+                        ArrayList<Book> matches = new ArrayList<>();
+
+                        for(Book b : books){
+                            if (b.getTitle().toLowerCase().contains(search)){
+                                matches.add(b);
+                            }
+                        }
+
+                        if(matches.isEmpty()){ 
+                            System.out.println("No Books found with that title.");
+                            continue;
+                        }
+
+                        if(matches.size() == 1){ //if there is one match checked out already or lets you check out
+                            Book b = matches.get(0);
+
+                            if(!b.isAvailable()){
+                                System.out.println("That book has already been checked out already.");
+                                continue;
+                            }
+
+                            b.setAvailable(false);
+                            System.out.println("Book checked out successfully!");
+                            break;
+                        }
+
+                        System.out.println("\nMultiple books found:");
+                        for(int i=0; i<matches.size(); i++){
+                            System.out.println((i +1) + ". " + matches.get(i).getTitle());
+                        }
+                        int choiceNum = -1;
+
+                        while (true){ // if multiple books are found with same part of keyword search allows user to choose by list number
+                            System.out.println("Enter the number of the book to check out: ");
+
+                            if (!scanner.hasNextInt()){
+                                System.out.println("Invalid input. Please input a number.");
+                                scanner.nextLine();
+                                continue;
+                            }
+
+                            choiceNum = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if(choiceNum < 1 || choiceNum > matches.size()) {
+                                System.out.println("Invalid choice. Enter a number the list.");
+                            }else{
+                                break;
+                            }
+                        }
+                        Book selected = matches.get(choiceNum-1);
+
+                        if(!selected.isAvailable()){
+                            System.out.println("That book is already checked out. Choose another option!");
+                            continue;
+                        }
+
+                        selected.setAvailable(false);
+                        System.out.println("Book chcked out successfully!");
+                        break;
+                        }
                     break;
             
                 //Allows users to return books
