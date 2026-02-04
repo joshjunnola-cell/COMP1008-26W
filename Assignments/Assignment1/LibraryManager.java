@@ -301,7 +301,74 @@ public class LibraryManager {
             
                 //Allows users to return books
                 case 6:
+                     if(books.isEmpty()){
+                        System.out.println("No books in library.");
+                        break;
+                     }   
+                     while (true) { 
+                        System.out.println("Enter a part or the full title of the book you'd like to return: ");
+                        String search = scanner.nextLine().trim().toLowerCase();
 
+                        ArrayList<Book> matches = new ArrayList<>();
+                        for(Book b : books){
+                            if(b.getTitle().trim().toLowerCase().contains(search) && !b.isAvailable()){
+                            matches.add(b);
+                            }
+                        }
+
+                        if(matches.isEmpty()){
+                            System.out.println("You have no books checked out under that title!");
+                            continue;
+                        }
+
+                        if(matches.size() == 1){ //if there is one match checked out already or lets you return it
+                            Book b = matches.get(0);
+
+                            if(b.isAvailable()){
+                                System.out.println("That book is in the system already.");
+                                continue;
+                            }
+                            b.setAvailable(true);
+                            System.out.println("Book returned successfully!");
+                            break;
+                        }
+
+                        System.out.println("\nMultiple books found: ");
+                        for(int i=0; i<matches.size(); i++){
+                            System.out.println((i + 1) + ". " + matches.get(i).getTitle());
+                        }
+
+                        int choiceNum = -1;
+                        while (true){ // if multiple books are found with same part of keyword search allows user to choose by list number
+                            System.out.println("Enter the number of the book to return: ");
+
+                            if (!scanner.hasNextInt()){
+                                System.out.println("Invalid input. Please input a number.");
+                                scanner.nextLine();
+                                continue;
+                            }
+
+                            choiceNum = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if(choiceNum < 1 || choiceNum > matches.size()) {
+                                System.out.println("Invalid choice. Enter a number the list.");
+                            }else{
+                                break;
+                            }
+                        }
+                        Book selected = matches.get(choiceNum-1);
+
+                        if(selected.isAvailable()){
+                            System.out.println("That book is already in the library. Choose another option!");
+                            continue;
+                        }
+
+                        selected.setAvailable(true);
+                        System.out.println("Book returned successfully!");
+                        break;                  
+                    }
+                    
                     break;
                 
                 //allows user to exit the program
