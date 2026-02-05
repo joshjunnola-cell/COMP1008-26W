@@ -375,6 +375,20 @@ public class LibraryManager {
                         System.out.println("Book returned successfully!");
                         break;                  
                     }
+
+                    
+                    String searchAgain = "";
+                    while(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                    System.out.println("Search again? Enter yes/no: ");
+                    searchAgain = scanner.nextLine().trim().toLowerCase();
+
+                        if(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                            System.out.println("Please enter 'yes' or 'no': ");
+                        }
+                    }
+                    if(searchAgain.equals("no")){
+                        break;
+                    }
                     
                     break;
                 
