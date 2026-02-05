@@ -13,6 +13,13 @@ class Book {
     private boolean available = true;
 
     // Default constructor and parameterized constructor
+    public Book() {
+        this.title = "";
+        this.author = "";
+        this.isbn = "";
+        this.available = true;
+    }
+
     public Book (String title, String author, String isbn){
         this.title = title;
         this.author = author;
@@ -31,7 +38,7 @@ class Book {
     
     // title and author cannot be empty
     public void setTitle(String title) {
-        if(title != null){
+        if(title != null && !title.trim().isEmpty()){
             this.title = title;
         }else{
             System.out.println("Error: Title cannot be empty");
@@ -39,7 +46,7 @@ class Book {
     }
 
     public void setAuthor(String author) {
-        if(author != null){
+        if(author != null && !author.trim().isEmpty()){
             this.author = author;
         }else{
             System.out.println("Error: Author cannot be empty.");
@@ -188,7 +195,7 @@ public class LibraryManager {
                         break;
                     }
 
-                    while (true){
+                    while (true){//allows user to enter a search
                         System.out.println("Enter author name to search: ");
                         String search = scanner.nextLine().trim().toLowerCase();
 
@@ -204,7 +211,7 @@ public class LibraryManager {
                             bookMatch++;
                         }
                     }
-                    if(bookMatch == 0) {
+                    if(bookMatch == 0) {//output if no matches found else if matches found and displays total
                         System.out.println("No books found for that author.");
                     }else{
                         System.out.println("Total matches: " + bookMatch);
