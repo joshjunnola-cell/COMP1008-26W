@@ -36,14 +36,15 @@ class CommissionEmployee extends Employee {
     private double commissionRate;
  
     public CommissionEmployee(String first, String last, String ssn,
-                            double sales, double rate){
+                             double sales, double rate){
     // TODO 5: Create constructor using super()
         super(first, last, ssn);
+
         setGrossSales(sales);
         setCommissionRate(rate);
     }
     // TODO 6: Create getters and setters with validation
- 
+    public void setGrossSales
     // TODO 7: Override earnings()
  
     // TODO 8: Override toString()
