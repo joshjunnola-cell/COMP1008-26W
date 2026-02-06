@@ -312,8 +312,20 @@ public class LibraryManager {
                         System.out.println("No books in library.");
                         break;
                      }   
-                     while (true) { 
-                        System.out.println("Enter a part or the full title of the book you'd like to return: ");
+                     while (true) {
+                        String searchAgain = "";
+                        while(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                            System.out.println("Enter a part or the full title of the book you'd like to return: ");
+                            System.out.println("Search again? Enter yes/no: ");
+                            searchAgain = scanner.nextLine().trim().toLowerCase();
+
+                            if(!searchAgain.equals("yes") && !searchAgain.equals("no")){
+                            System.out.println("Please enter 'yes' or 'no': ");
+                            }
+                        }
+                        if(searchAgain.equals("no")){
+                            break;
+                        }
                         String search = scanner.nextLine().trim().toLowerCase();
 
                         ArrayList<Book> matches = new ArrayList<>();
@@ -374,20 +386,6 @@ public class LibraryManager {
                         selected.setAvailable(true);
                         System.out.println("Book returned successfully!");
                         break;                  
-                    }
-
-                    
-                    String searchAgain = "";
-                    while(!searchAgain.equals("yes") && !searchAgain.equals("no")){
-                    System.out.println("Search again? Enter yes/no: ");
-                    searchAgain = scanner.nextLine().trim().toLowerCase();
-
-                        if(!searchAgain.equals("yes") && !searchAgain.equals("no")){
-                            System.out.println("Please enter 'yes' or 'no': ");
-                        }
-                    }
-                    if(searchAgain.equals("no")){
-                        break;
                     }
                     
                     break;
