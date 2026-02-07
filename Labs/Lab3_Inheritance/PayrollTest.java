@@ -44,9 +44,13 @@ class CommissionEmployee extends Employee {
         setCommissionRate(rate);
     }
     // TODO 6: Create getters and setters with validation
-    public void setGrossSales
+    public void setGrossSales(double sales) {
+        if(sales < 0.0) throw new IllegalArgumentException(
+        "Gross Sales Must Be >= 0.0");
+        grossSales = sales;
+    }
     // TODO 7: Override earnings()
- 
+    public void setCommissionRate
     // TODO 8: Override toString()
 }
 
