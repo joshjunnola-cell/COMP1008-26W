@@ -1,5 +1,5 @@
 package Labs.Lab3_Inheritance;
- 
+ import java.util.Scanner;
  
 abstract class Employee {
  
@@ -70,21 +70,27 @@ class CommissionEmployee extends Employee {
     public String toString() {
         return String.format("%s%n%s: $%,.2f; %s: %.2f",
         "Commission Employee: " + super.toString(),
-        "Gross Sales: " + getGrossSales(),
-        "Commission Earnings: " + getCommissionRate());
+        "Gross Sales", getGrossSales(),
+        "Commission Rate", getCommissionRate());
     }
 }
 
 public class PayrollTest {
  
     public static void main(String[] args) {
-        Scanner scanner = new scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
  
         // TODO 9: Create a CommissionEmployee object
-        CommissionEmployee cs = new CommissionEmployee
-        ("Sarah", "Robertson", "231648745", 4645, 325);
+        CommissionEmployee ce = new CommissionEmployee
+        ("Sarah", "Robertson", "231648745", 4645, 0.8);
+
         // TODO 10: Display employee details
- 
+        System.out.println("Employee information: " + ce.toString());
+
         // TODO 11: Display earnings
+        System.out.printf("%s%nEarned: $%,.2f%n%n",
+        ce.toString(), ce.earnings());
+
+        scanner.close();
     }
 }
