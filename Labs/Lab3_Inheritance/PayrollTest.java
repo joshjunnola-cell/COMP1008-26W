@@ -78,9 +78,11 @@ class CommissionEmployee extends Employee {
 public class PayrollTest {
  
     public static void main(String[] args) {
+        Scanner scanner = new scanner(System.in);
  
         // TODO 9: Create a CommissionEmployee object
- 
+        CommissionEmployee cs = new CommissionEmployee
+        ("Sarah", "Robertson", "231648745", 4645, 325);
         // TODO 10: Display employee details
  
         // TODO 11: Display earnings
