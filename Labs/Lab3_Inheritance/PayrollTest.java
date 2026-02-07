@@ -59,10 +59,20 @@ class CommissionEmployee extends Employee {
     public double getGrossSales() { return grossSales; }
     public double getCommissionRate() { return commissionRate; }
 
-
     // TODO 7: Override earnings()
-    
+    @Override
+    public double earnings() {
+        return getGrossSales() * getCommissionRate();
+    }
+
     // TODO 8: Override toString()
+    @Override
+    public String toString() {
+        return String.format("%s%n%s: $%,.2f; %s: %.2f",
+        "Commission Employee: " + super.toString(),
+        "Gross Sales: " + getGrossSales(),
+        "Commission Earnings: " + getCommissionRate());
+    }
 }
 
 public class PayrollTest {
