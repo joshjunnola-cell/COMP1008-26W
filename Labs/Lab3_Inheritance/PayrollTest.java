@@ -88,8 +88,9 @@ public class PayrollTest {
         System.out.println("Employee information: " + ce.toString());
 
         // TODO 11: Display earnings
-        System.out.printf("%s%nEarned: $%,.2f%n%n",
-        ce.toString(), ce.earnings());
+        System.out.println("========================");
+        System.out.printf("Take-home: $%,.2f%n%n",
+        ce.earnings());
 
         scanner.close();
     }
