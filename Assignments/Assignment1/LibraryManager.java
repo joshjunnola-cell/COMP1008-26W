@@ -326,8 +326,8 @@ public class LibraryManager {
                         System.out.println("Enter a part of the book title to return (or type back for previous menu): ");
                         String search = scanner.nextLine().trim().toLowerCase();
 
-                        if (search.equals("back")) {
-                            break; // exits the return loop and goes to search
+                        if (search.equals("back")) { // exits the return loop and goes to search
+                            break; 
                         }
 
                         ArrayList<Book> matches = new ArrayList<>();
@@ -380,7 +380,7 @@ public class LibraryManager {
                         }
                         Book selected = matches.get(choiceNum - 1);
 
-                        if (selected.isAvailable()) {
+                        if (selected.isAvailable()) { // If trying to return book that is already in library
                             System.out.println("That book is already in the library. Choose another option!");
                             continue;
                         }
@@ -390,16 +390,16 @@ public class LibraryManager {
                         break;
                     }
 
-                    String searchAgain = "";
-                    while (!searchAgain.equals("yes") && !searchAgain.equals("no")) {
-                        System.out.println("Search again? Enter yes/no: ");
-                        searchAgain = scanner.nextLine().trim().toLowerCase();
+                    String returnAgain = ""; //gives user option to return another or leave
+                    while (!returnAgain.equals("yes") && !returnAgain.equals("no")) {
+                        System.out.println("Return another book? Enter yes/no: ");
+                        returnAgain = scanner.nextLine().trim().toLowerCase();
 
-                        if (!searchAgain.equals("yes") && !searchAgain.equals("no")) {
+                        if (!returnAgain.equals("yes") && !returnAgain.equals("no")) {
                             System.out.println("Please enter 'yes' or 'no': ");
                         }
                     }
-                    if (searchAgain.equals("no")) {
+                    if (returnAgain.equals("no")) {
                         break;
                     }
 
