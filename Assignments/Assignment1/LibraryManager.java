@@ -144,7 +144,7 @@ public class LibraryManager {
                     System.out.println("Book added successfully");
                     break;
 
-                //if user wants to display all available books
+                //if user wants to display all books currently in library
                 case 2:
                     if (books.isEmpty()) {
                         System.out.println("No books to display yet.");
