@@ -322,11 +322,13 @@ public class LibraryManager {
                         break;
                     }
 
-                    
-
                     while (true) {
-                        System.out.println("Enter a part of the book title or full title to return: ");
+                        System.out.println("Enter a part of the book title to return (or type back for previous menu): ");
                         String search = scanner.nextLine().trim().toLowerCase();
+
+                        if (search.equals("back")) {
+                            break; // exits the return loop and goes to search
+                        }
 
                         ArrayList<Book> matches = new ArrayList<>();
                         for (Book b : books) {
@@ -387,6 +389,7 @@ public class LibraryManager {
                         System.out.println("Book returned successfully!");
                         break;
                     }
+
                     String searchAgain = "";
                     while (!searchAgain.equals("yes") && !searchAgain.equals("no")) {
                         System.out.println("Search again? Enter yes/no: ");
