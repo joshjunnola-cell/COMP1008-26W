@@ -107,13 +107,15 @@ public class StudentValidatorLab {
         System.out.println("Number of vowels: " + vowelCount);
         // STEP 9:
         // Reverse sentence using StringBuilder
+        StringBuilder sb = new StringBuilder(sentence);
+        String reversed = sb.reverse().toString();
  
- 
- 
+        System.out.println("Reversed sentence: " + reversed);
  
         // STEP 10:
         // Replace all digits in sentence with '*'
- 
+        String replaced = sentence.replaceAll("\\d", "*");
+        System.out.println("Replaced digits: " + replaced);
  
  
  
