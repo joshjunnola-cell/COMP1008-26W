@@ -64,14 +64,18 @@ public class StudentValidatorLab {
  
         // STEP 5:
         // Ask user to enter email
-        
- 
+        System.out.println("Enter your email.");
+        String studentEmail = scanner.nextLine();
  
  
         // STEP 6:
         // Validate email format
- 
- 
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-]+$";
+        if(studentEmail.matches(emailRegex)){
+            System.out.println("Valid Email");
+        }else{
+            System.out.println("Invalid Email");
+        }
  
  
         // =====================================================
