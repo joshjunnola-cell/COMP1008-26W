@@ -1,7 +1,6 @@
 package Labs.Lab4_StudentValidator;
 
 import java.util.*;
-import java.util.regex.*;
  
  
 public class StudentValidatorLab {
@@ -20,15 +19,19 @@ public class StudentValidatorLab {
  
         // STEP 1:
         // Ask user to enter full name
- 
- 
+        System.out.println("Please enter full name: ");
+        String userName = scanner.nextLine();
  
  
         // STEP 2:
         // Validate name
         // Only letters and spaces allowed
         // Use regex with matches()
- 
+        if (userName.matches("^[A-Za-z ]+$")) {
+            System.out.println("Valid name entered!");
+        } else {
+            System.out.println("Invalid name. Only letters and spaces allowed.");
+        }
  
  
  
@@ -40,7 +43,7 @@ public class StudentValidatorLab {
  
         // STEP 3:
         // Ask user to enter student ID
- 
+        
  
  
  
