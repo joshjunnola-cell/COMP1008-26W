@@ -1,6 +1,8 @@
 package Labs.Lab4_StudentValidator;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
  
  
 public class StudentValidatorLab {
@@ -144,9 +146,16 @@ public class StudentValidatorLab {
         // STEP 12:
         // Create string: "Invoice number is 4567 and total is 890"
         // Use Pattern and Matcher to extract all numbers
+        String invoice = "Invoice number is 4567 and total is 890";
  
- 
- 
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(invoice);
+
+        System.out.println("Extracted numbers: ");
+
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
  
         scanner.close();
     }
