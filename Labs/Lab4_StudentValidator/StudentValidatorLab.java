@@ -43,13 +43,17 @@ public class StudentValidatorLab {
  
         // STEP 3:
         // Ask user to enter student ID
-        
- 
+        System.out.println("Enter your student ID: ");
+        String studentID = scanner.nextLine();
  
  
         // STEP 4:
         // Validate format using regex
- 
+        if (studentID.matches("^S-\\d{4}$")) {
+            System.out.println("Valid student ID.");
+        }else {
+            System.out.println("Invalid ID. Format must be S-1234");
+        }
  
  
  
@@ -60,7 +64,7 @@ public class StudentValidatorLab {
  
         // STEP 5:
         // Ask user to enter email
- 
+        
  
  
  
