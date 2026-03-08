@@ -85,16 +85,24 @@ public class StudentValidatorLab {
  
         // STEP 7:
         // Ask user to enter a sentence
- 
- 
+        System.out.println("Enter a random sentence: ");
+        String sentence = scanner.nextLine();
  
  
         // STEP 8:
         // Count vowels using Character class
- 
- 
- 
- 
+        int vowelCount = 0;
+
+        for (int i = 0; i < sentence.length(); i++) {
+            char ch = sentence.charAt(i);
+        
+            ch = Character.toLowerCase(ch);
+            
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            }
+
+        }
         // STEP 9:
         // Reverse sentence using StringBuilder
  
