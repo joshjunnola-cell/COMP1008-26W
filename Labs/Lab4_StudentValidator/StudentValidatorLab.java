@@ -103,6 +103,8 @@ public class StudentValidatorLab {
             }
 
         }
+
+        System.out.println("Number of vowels: " + vowelCount);
         // STEP 9:
         // Reverse sentence using StringBuilder
  
