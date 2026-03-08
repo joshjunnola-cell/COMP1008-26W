@@ -128,7 +128,11 @@ public class StudentValidatorLab {
         // Create string: "Math,Science,Java,English"
         // Split using comma
         // Print each course
- 
+        String courses = "Math,Science,Java,English";
+        String[] tokens = courses.split(",");
+        for(String course : tokens) {
+            System.out.println("Course: " + course);
+        }
  
  
  
