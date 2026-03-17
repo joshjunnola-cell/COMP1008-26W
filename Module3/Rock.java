@@ -14,7 +14,7 @@ import java.util.Scanner;
 */
  
  
-public class Main {
+public class Rock {
  
  
     // STEP 0: Enum for Game Choices

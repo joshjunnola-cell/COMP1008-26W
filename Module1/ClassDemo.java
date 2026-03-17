@@ -117,7 +117,7 @@ class Account {
 // -------------------------
 // MAIN CLASS
 // -------------------------
-    public class Main {
+    public class ClassDemo {
         public static void main(String[] args) {
     
     
