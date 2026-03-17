@@ -40,23 +40,37 @@ public class FileHandlingLab {
  
         // TODO 1:
         // Create a default constructor
- 
- 
+
+
+        public Student() {
+            this.id = 0;
+            this.name = "";
+            this.course = "";
+        }
+
         // TODO 2:
         // Create a parameterized constructor that initializes
         // id, name, and course
- 
- 
- 
- 
+        public Student(int id, String name, String course) {
+            this.id = id;
+            this.name = name;
+            this.course = course;
+        }
+
+
         // TODO 3:
         // Override toString() to display student info
         // Format example: 101: John - Java
- 
+        @Override
+        public String toString() {
+            return "Student - " +
+                    id + ": " +
+                    name + " - " + course;
+        }
  
     }
- 
- 
+
+
     public static void main(String[] args) {
  
  
@@ -73,15 +87,16 @@ public class FileHandlingLab {
  
             // TODO 4:
             // Write the header "Student List" to the file
- 
+            Files.write(Paths.get(textFile), "Student List\n".getBytes());
  
             // TODO 5:
             // Append two student records
             // Example:
             // 101 - John - Java
             // 102 - Alice - Python
- 
- 
+            Files.write(Paths.get(textFile),"101: Josh - Java\n".getBytes(),StandardOpenOption.APPEND);
+            Files.write(Paths.get(textFile),"102: Alice - Python\n".getBytes(),StandardOpenOption.APPEND);
+
  
  
             // -------------------------------------
@@ -91,11 +106,11 @@ public class FileHandlingLab {
  
             // TODO 6:
             // Read the entire file content into a String
- 
+            String content = new String(Files.readAllBytes(Paths.get(textFile)));
  
             // TODO 7:
             // Print the content to the console
- 
+            System.out.println("Text File Content: " + content);
  
  
  
@@ -109,8 +124,8 @@ public class FileHandlingLab {
  
             // TODO 8:
             // Add two Student objects to the list
- 
- 
+            students.add(new Student(101, "John", "Java"));
+            students.add(new Student(102, "Jalice", "Python"));
  
  
             // -------------------------------------
@@ -120,11 +135,11 @@ public class FileHandlingLab {
  
             // TODO 9:
             // Create ObjectMapper object
- 
+            ObjectMapper om = new ObjectMapper();
  
             // TODO 10:
             // Enable pretty printing (INDENT_OUTPUT)
- 
+            om.enable(SerializationFeature.INDENT_OUTPUT);
  
             String jsonFile = "students.json";
  
@@ -132,8 +147,8 @@ public class FileHandlingLab {
             // TODO 11:
             // Convert the students list into JSON
             // and save it into the json file
- 
- 
+            om.writeValue(new File(jsonFile), students);
+            System.out.println("JSON file created:" + jsonFile);
  
  
             // -------------------------------------
@@ -143,11 +158,11 @@ public class FileHandlingLab {
  
             // TODO 12:
             // Read the JSON file back into a List
- 
+            List loadedStudents = om.readValue(new File(jsonFile),List.class);
  
             // TODO 13:
             // Print the loaded students
- 
+            System.out.println("\nLoaded students from JSON: " + loadedStudents);
  
  
  
@@ -161,11 +176,13 @@ public class FileHandlingLab {
  
             // TODO 14:
             // If directory does not exist, create it
- 
+            if(!directory.exists()){
+                directory.mkdir();
+            }
  
             // TODO 15:
             // Print whether directory exists
- 
+            System.out.println("\nDirectory exists: " + directory.exists());
  
  
  
@@ -175,11 +192,13 @@ public class FileHandlingLab {
  
  
             File currentDirectory = new File(".");
- 
+            System.out.println("\nFiles in the current directory: ");
  
             // TODO 16:
             // Loop through files and print file names
- 
+            for(File file: currentDirectory.listFiles()) {
+                System.out.println(file.getName());
+            }
  
  
  
