@@ -4,7 +4,7 @@ public class StringUtility {
 
     public String reverse(String str){
         if(str == null) {
-            throw new IllegalArgumentException("String cannot be null")
+            throw new IllegalArgumentException("String cannot be null");
         }
         String reversed = "";
 
