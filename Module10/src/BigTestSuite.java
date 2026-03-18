@@ -13,37 +13,37 @@ public class BigTestSuite {
 
     @Test
     public void testAdd() {
-        assertEquals(10,calc.add(3,4));
+        assertEquals(10, calc.add(3, 4));
 
     }
 
 
     @Test
     public void testSubtract() {
-        assertEquals(2,calc.subtract(6, 4));
+        assertEquals(2, calc.subtract(6, 4));
 
     }
 
 
     @Test
     public void testMultiply() {
-        assertEquals(10,calc.multiply(5,2));
+        assertEquals(10, calc.multiply(5, 2));
     }
 
 
     @Test
     public void testDivide() {
-        Assertions.assertEquals(1, calc.divide(4,2));
+        assertEquals(1, calc.divide(4, 2));
     }
 
 
     // Exception test (division by zero)
-    @Test(expected = ArithmeticException.class)
+    @Test
+    public void testDivideByZero() {
+        assertThrows(ArithmeticException.class, () -> {
 
-    public void testDivideByZero(){
-
-        calc.divide(10, 0);
-
+            calc.divide(10, 0);
+        });
     }
 
 
@@ -53,14 +53,14 @@ public class BigTestSuite {
 
     @Test
     public void testReverse() {
-        Assertions.assertEquals("OLLEH", strUtil.reverse("HELLO"));
+        assertEquals("OLLEH", strUtil.reverse("HELLO"));
 
     }
 
 
     @Test
     public void testPalindromeTrue() {
-        Assertions.assertTrue(strUtil.isPalindrome("madam"));
+        assertTrue(strUtil.isPalindrome("madam"));
 
     }
 
@@ -68,10 +68,8 @@ public class BigTestSuite {
     @Test
     public void testPalindromeFalse() {
 
-        Assertions.assertFalse(strUtil.isPalindrome("hello"));
+        assertFalse(strUtil.isPalindrome("hello"));
     }
-
-
 
 
     // BankAccount tests
@@ -79,9 +77,9 @@ public class BigTestSuite {
     public void testDeposit() {
 
 
-        BankAccount acc = new BankAccount("John",500);
+        BankAccount acc = new BankAccount("John", 500);
         acc.deposit(200);
-        Assertions.assertEquals(700, acc.getBalance(), 0.001);
+        assertEquals(700, acc.getBalance(), 0.001);
 
 
     }
@@ -91,26 +89,28 @@ public class BigTestSuite {
     public void testWithdraw() {
 
 
-        BankAccount acc = new BankAccount("John",500);
+        BankAccount acc = new BankAccount("John", 500);
         acc.withdraw(200);
-        Assertions.assertEquals(300, acc.getBalance(), 0.001);
+        assertEquals(300, acc.getBalance(), 0.001);
 
     }
-
-
 
 
     // Exception test: withdraw more than balance
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testWithdrawTooMuch() {
-        BankAccount acc = new BankAccount("John", 500);
-        acc.withdraw(600);
+        assertThrows(ArithmeticException.class, () -> {
+            BankAccount acc = new BankAccount("John", 500);
+            acc.withdraw(600);
+        });
     }
 
     // Exception test: negative deposit
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testNegativeDeposit() {
-        BankAccount acc = new BankAccount("John", 500);
-        acc.deposit(-100);
+        assertThrows(ArithmeticException.class, () -> {
+            BankAccount acc = new BankAccount("John", 500);
+            acc.deposit(-100);
+        });
     }
 }
