@@ -1,0 +1,743 @@
+1. Input Questions
+
+
+
+Question 1.1
+
+Write a program that asks the user to enter their full name and prints it back.
+
+
+
+Question 1.2
+
+Write a program that asks the user to enter two integers and prints their product.
+
+
+
+Question 1.3
+
+Write a program that asks the user to enter a decimal number and prints its square.
+
+
+
+Question 1.4
+
+Write a program that asks the user to enter 3 words separately and prints them on one line separated by commas.
+
+
+
+Question 1.5
+
+Write a program that asks the user for:
+
+
+
+Name
+
+Age
+
+Height
+
+
+
+Then display all the information neatly formatted.
+
+
+
+2. Output Questions
+
+
+
+Question 2.1
+
+Write a program that prints the following exactly:
+
+
+
+Welcome to Java Programming!
+
+
+
+Question 2.2
+
+Write a program that prints a rectangle using stars:
+
+
+
+*****
+
+*****
+
+*****
+
+
+
+Question 2.3
+
+Write a program that prints your name, age, and favorite subject on separate lines.
+
+
+
+Question 2.4
+
+Write a program that prints:
+
+
+
+The sum of 10 and 20 is 30
+
+(Use variables.)
+
+
+
+Question 2.5
+
+Write a program that demonstrates the difference between print() and println().
+
+
+
+3. Data Type Conversions
+
+
+
+Question 3.1
+
+Ask the user to enter their age as a String. Convert it to an integer and print next year’s age.
+
+
+
+Question 3.2
+
+Convert a double value (e.g., 5.75) into an integer and print both values.
+
+
+
+Question 3.3
+
+Ask the user for two numbers as Strings. Convert them to doubles and print their average.
+
+
+
+Question 3.4
+
+Convert an integer into a double and concatenate it with a sentence.
+
+
+
+Question 3.5
+
+Ask the user for a character as a String. Convert it to a float and print it.
+
+
+
+4. Arrays
+
+
+
+Question 4.1
+
+Create an array of 5 integers and print all elements using a loop.
+
+
+
+Question 4.2
+
+Ask the user to enter 5 numbers and store them in an array. Print the total sum.
+
+
+
+Question 4.3
+
+Create an array of 5 double values and print the average.
+
+
+
+Question 4.4
+
+Create an array of names and print the longest name.
+
+
+
+Question 4.5
+
+Create an integer array and count how many even numbers it contains.
+
+
+
+5. Method Overloading
+
+
+
+Question 5.1
+
+Create two methods named multiply():
+
+One takes two integers
+
+One takes three integers
+
+
+
+Question 5.2
+
+Create overloaded display() methods:
+
+One prints a String
+
+One prints an int
+
+One prints a double
+
+
+
+Question 5.3
+
+Create overloaded area() methods:
+
+One calculates area of a square
+
+One calculates area of a rectangle
+
+
+
+Question 5.4
+
+Create overloaded convert() methods:
+
+One converts int to double
+
+One converts double to int
+
+
+
+Question 5.5
+
+Create overloaded greet() methods:
+
+One takes no parameters
+
+One takes a name
+
+One takes name and age
+
+
+
+6 Classes
+
+
+
+Question 6.1
+
+Create a Car class with:
+
+private brand
+
+private year
+
+Add getters and setters.
+
+Create an object and print details.
+
+
+
+Question 6.2
+
+Create a Student class with:
+
+private name
+
+private grade
+
+Use getters and setters.
+
+Create an array of 3 students and print their details.
+
+
+
+Question 6.3
+
+
+
+Create an enum called Level:
+
+BEGINNER
+
+INTERMEDIATE
+
+ADVANCED
+
+
+
+Create a Course class that includes this enum as a field.
+
+
+
+Question 6.4
+
+Create a Book class with:
+
+private title
+
+private author
+
+private price
+
+Create 3 books in an array and print the most expensive book.
+
+
+
+Question 6.5
+
+Create an Employee class with:
+
+private name
+
+private salary
+
+private department (enum)
+
+Create an array of employees and calculate the average salary.
+
+
+
+7. Loops
+
+
+
+Question 7.1
+
+Write a program that uses a for loop to print numbers from 1 to 20.
+
+
+
+Question 7.2
+
+Write a program that uses a while loop to print numbers from 10 down to 1.
+
+
+
+Question 7.3
+
+Write a program that calculates and prints the sum of numbers from 1 to 100 using a for loop.
+
+
+
+Question 7.4
+
+Write a program that keeps asking the user to enter a number until they enter 0.
+
+When 0 is entered, print the total sum of all numbers entered.
+
+
+
+Question 7.5
+
+Create an array of 5 integers.
+
+Use an enhanced for loop to:
+
+Print each number
+
+Calculate and print the average
+
+
+
+8. If and Switch
+
+
+
+Question 8.1 
+
+Write a program that asks the user to enter a number.
+
+If the number is positive, print "Positive".
+
+If negative, print "Negative".
+
+If zero, print "Zero".
+
+
+
+Question 8.2 
+
+Ask the user to enter a test mark (0–100).
+
+Display the grade:
+
+75–100 → Distinction
+
+50–74 → Pass
+
+0–49 → Fail
+
+
+
+Question 8.3 
+
+Ask the user for their age and whether they have a driver’s license (true/false).
+
+Only allow them to rent a car if:
+
+
+
+They are 21 or older
+
+AND they have a license
+
+Otherwise, print "Not eligible".
+
+
+
+Question 8.4 
+
+Ask the user to enter a number (1–7).
+
+Use a switch statement to display the day of the week.
+
+Example:
+
+1 → Monday
+
+2 → Tuesday
+
+...
+
+
+
+Question 8.5 
+
+Ask the user to enter:
+
+Two numbers
+
+An operator (+, -, *, /)
+
+Use a switch statement to perform the correct calculation and print the result.
+
+
+
+9. Regular Expressions
+
+Question 9.1
+
+Write a Java program that checks if a student number:
+
+Starts with "ST"
+
+Followed by exactly 4 digits
+
+Example of valid input:
+
+ST1234
+
+Invalid examples:
+
+st1234
+
+ST12
+
+ST12345
+
+
+
+Question 9.2
+
+Write a program that checks if a username:
+
+Is between 5 and 10 characters long
+
+Contains only:
+
+Letters
+
+Numbers
+
+Underscores (_)
+
+Print "Valid username" or "Invalid username".
+
+
+
+Question 9.3
+
+Write a program that checks if a name:
+
+Starts with a capital letter
+
+Followed by only lowercase letters
+
+Has no spaces
+
+Example valid input:
+
+Michael
+
+Invalid:
+
+michael
+
+MICHAEL
+
+Michael1
+
+
+
+Question 9.4 
+
+Write a program that checks if a product code:
+
+Contains 3 uppercase letters
+
+Followed by a dash (-)
+
+Followed by 3 digits
+
+Example valid input:
+
+ABC-123
+
+
+
+Question 9.5
+
+Write a program that checks if a date is in the format:
+
+DD/MM/YYYY
+
+
+
+Rules:
+
+2 digits for day
+
+2 digits for month
+
+4 digits for year
+
+Must include slashes
+
+Example:
+
+25/12/2025
+
+(Note: You do NOT need to validate real calendar dates, only the format.)
+
+
+
+10. StringBuilder
+
+Question 10.1
+
+Write a program that:
+
+Creates a StringBuilder
+
+Appends your first name
+
+Appends a space
+
+Appends your last name
+
+Prints the final result
+
+
+
+Question 10.2
+
+Write a program that:
+
+Asks the user to enter a word
+
+Uses StringBuilder to reverse the word
+
+Prints the reversed word
+
+
+
+Question 10.3
+
+Create a StringBuilder with the word "Java"
+
+Insert the word "Programming " at the beginning so the final result becomes: "Programming Java"
+
+
+
+Question 10.4
+
+Create a StringBuilder containing: HelloWorld
+
+Remove the word "World" using the delete() method and print the result.
+
+
+
+Question 10.5
+
+Create a StringBuilder with: "I like cats"
+
+Replace "cats" with "dogs" using the replace() method.
+
+
+
+11. JUnit Testing
+
+Create a class named Calculator. 
+
+Each question below will ask you to create a method in the Calculator class and to test it.
+
+
+
+Question 11.1 
+
+Create a method
+
+public int add(int a, int b)
+
+Write a JUnit test that verifies:
+
+add(2, 3) returns 5
+
+add(-1, 1) returns 0
+
+
+
+Question 11.2
+
+Create a method:
+
+public int getLength(String text)
+
+Write JUnit tests to verify: 
+
+"Hello" returns 5
+
+"" returns 0
+
+
+
+Question 11.3
+
+Create a method:
+
+public boolean isEven(int number)
+
+
+
+Write JUnit tests to check:
+
+4 returns true
+
+7 returns false
+
+
+
+Question 11.4
+
+Create a method:
+
+public double divide(int a, int b)
+
+Write a JUnit test that:
+
+Verifies correct division result
+
+Tests that dividing by 0 throws an exception
+
+
+
+Question 11.5
+
+Create a simple Person class with:
+
+name
+
+age
+
+
+
+Write JUnit tests to verify:
+
+The constructor sets values correctly
+
+Getters return the correct values
+
+
+
+12. Try-Catch Statements
+
+Question 12.1
+
+Write a program that:
+
+Asks the user to enter two integers.
+
+Divides the first number by the second.
+
+Uses a try-catch block to handle division by zero.
+
+If division by zero occurs, print:
+
+Cannot divide by zero!
+
+
+
+Question 12.2
+
+Write a program that:
+
+Asks the user to enter an integer.
+
+Uses a try-catch block to handle invalid input (e.g., letters instead of numbers).
+
+If invalid input is entered, print:
+
+Invalid number entered.
+
+
+
+Question 12.3
+
+Create an array of 5 integers.
+
+Ask the user to enter an index number.
+
+Use a try-catch block to handle ArrayIndexOutOfBoundsException.
+
+If the index is invalid, print:
+
+Invalid index!
+
+
+
+Question 12.4
+
+Write a program that:
+
+Asks the user for two numbers.
+
+Divides them.
+
+Uses multiple catch blocks to handle:
+
+ArithmeticException
+
+InputMismatchException
+
+Print appropriate error messages for each exception.
+
+
+
+Question 12.5
+
+Write a program that:
+
+Uses a try-catch-finally block.
+
+In the try block, attempt to divide two numbers.
+
+In the catch block, print an error message.
+
+In the finally block, print:
+
+Program finished.
+
+The finally message must print whether an exception occurs or not. " answer them under each question
