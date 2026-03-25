@@ -19,6 +19,12 @@ public class CalculatorApp extends Application {
         TextField input = new TextField();
  
         // Step 2: Create Buttons for operations
+        Button btnAdd = new Button("+");
+        Button btnSub = new Button("-");
+        Button btnMul = new Button("*");
+        Button btnDiv = new Button("/");
+        Button btnEq  = new Button("=");
+        Button btnClear = new Button("C");
  
         // Step 3: Create Label for result
 
