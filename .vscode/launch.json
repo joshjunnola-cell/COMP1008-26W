@@ -5,13 +5,13 @@
 
   "version": "0.2.0",
   "configurations": [
+
     {
         "type": "java",
         "name": "JavaFXLearningActivity",
         "request": "launch",
-        "mainClass": "Module11.JavaFXLearningActivity",
+        "mainClass": "JavaFXLearningActivity",
         "projectName": "COMP1008-26W_edd66e12"
     }
-  
 ]
 }
