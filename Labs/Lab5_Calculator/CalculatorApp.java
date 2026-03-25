@@ -11,13 +11,14 @@ import javafx.stage.Stage;
  
 public class CalculatorApp extends Application {
  
+    private String operator = "";
+    private double firstNumber = 0;
+
     @Override
     public void start(Stage primaryStage) {
  
         // Step 1: Create TextFields for input
         TextField input = new TextField();
-        private String operator = "";
-        private double firstNumber = 0;
  
         // Step 2: Create Buttons for operations
         Button btnAdd = new Button("+");
@@ -28,7 +29,7 @@ public class CalculatorApp extends Application {
         Button btnClear = new Button("C");
  
         // Step 3: Create Label for result
-        java.awt.Label resultLabel = new Label("Results");
+        Label resultLabel = new Label("Results");
 
         // Step 4: HBox for buttons
         HBox buttonRow = new HBox(10);
@@ -45,7 +46,7 @@ public class CalculatorApp extends Application {
                 operator = "+";
                 input.clear();
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ex) {
                 resultLabel.setText("Invalid Input");
             }
         });
@@ -56,7 +57,7 @@ public class CalculatorApp extends Application {
                 operator = "-";
                 input.clear();
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ex) {
                 resultLabel.setText("Invalid Input");
             }
         });
@@ -67,7 +68,7 @@ public class CalculatorApp extends Application {
                 operator = "*";
                 input.clear();
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ex) {
                 resultLabel.setText("Invalid Input");
             }
         });
@@ -78,7 +79,7 @@ public class CalculatorApp extends Application {
                 operator = "/";
                 input.clear();
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ex) {
                 resultLabel.setText("Invalid Input");
             }
         });
@@ -110,7 +111,7 @@ public class CalculatorApp extends Application {
 
                 resultLabel.setText("Result: " + result);
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ex) {
                 resultLabel.setText("Invalid Input");
             }
         });
@@ -121,10 +122,16 @@ public class CalculatorApp extends Application {
             input.clear();
             firstNumber = 0;
             operator = "";
+            resultLabel.setText("Results");
         });
 
         // Step 7: Create scene and show stage
-       
+
+        Scene scene = new Scene(layout, 350, 250);
+ 
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Simple Calculator");
+        primaryStage.show();
     }
  
     public static void main(String[] args) {
