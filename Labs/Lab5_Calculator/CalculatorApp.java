@@ -28,7 +28,7 @@ public class CalculatorApp extends Application {
         Button btnClear = new Button("C");
  
         // Step 3: Create Label for result
-        Label resultLabel = new Label("Results");
+        java.awt.Label resultLabel = new Label("Results");
 
         // Step 4: HBox for buttons
         HBox buttonRow = new HBox(10);
@@ -86,11 +86,41 @@ public class CalculatorApp extends Application {
         // code for "=" button function
         btnEq.setOnAction(e -> {
             try {
-                double secondNumber = double.parseDouble(input.getText());
+                double secondNumber = Double.parseDouble(input.getText());
                 double result = 0;
-                
-            } catch (Exception e) {
+
+                switch (operator) {
+                    case "+": result = firstNumber + secondNumber;
+                    break;
+
+                    case "-": result = firstNumber - secondNumber;
+                    break;
+
+                    case "*": result = firstNumber * secondNumber;
+                    break;
+
+                    case "/":
+                        if (secondNumber == 0) {
+                            resultLabel.setText("Cannot divide by zero");
+                            return;
+                        }
+                        result = firstNumber / secondNumber;
+                        break;
+                }
+
+                resultLabel.setText("Result: " + result);
+
+            } catch (NumberFormatException e) {
+                resultLabel.setText("Invalid Input");
             }
+        });
+
+        // clear button "C" reset everything
+
+        btnClear.setOnAction(e -> {
+            input.clear();
+            firstNumber = 0;
+            operator = "";
         });
 
         // Step 7: Create scene and show stage
