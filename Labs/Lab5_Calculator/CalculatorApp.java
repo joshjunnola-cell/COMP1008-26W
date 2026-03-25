@@ -16,6 +16,8 @@ public class CalculatorApp extends Application {
  
         // Step 1: Create TextFields for input
         TextField input = new TextField();
+        private String operator = "";
+        private double firstNumber = 0;
  
         // Step 2: Create Buttons for operations
         Button btnAdd = new Button("+");
@@ -37,7 +39,60 @@ public class CalculatorApp extends Application {
         layout.getChildren().addAll(input, resultLabel, buttonRow);
 
         // Step 6: Event handling for buttons
-       
+        btnAdd.setOnAction(e -> {
+            try {
+                firstNumber = Double.parseDouble(input.getText());
+                operator = "+";
+                input.clear();
+
+            } catch (NumberFormatException e) {
+                resultLabel.setText("Invalid Input");
+            }
+        });
+
+        btnSub.setOnAction(e -> {
+            try {
+                firstNumber = Double.parseDouble(input.getText());
+                operator = "-";
+                input.clear();
+
+            } catch (NumberFormatException e) {
+                resultLabel.setText("Invalid Input");
+            }
+        });
+
+        btnMul.setOnAction(e -> {
+            try {
+                firstNumber = Double.parseDouble(input.getText());
+                operator = "*";
+                input.clear();
+
+            } catch (NumberFormatException e) {
+                resultLabel.setText("Invalid Input");
+            }
+        });
+
+        btnDiv.setOnAction(e -> {
+            try {
+                firstNumber = Double.parseDouble(input.getText());
+                operator = "/";
+                input.clear();
+
+            } catch (NumberFormatException e) {
+                resultLabel.setText("Invalid Input");
+            }
+        });
+
+        // code for "=" button function
+        btnEq.setOnAction(e -> {
+            try {
+                double secondNumber = double.parseDouble(input.getText());
+                double result = 0;
+                
+            } catch (Exception e) {
+            }
+        });
+
         // Step 7: Create scene and show stage
        
     }

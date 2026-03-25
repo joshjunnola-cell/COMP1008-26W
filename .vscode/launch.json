@@ -5,7 +5,13 @@
 
   "version": "0.2.0",
   "configurations": [
-
+    {
+        "type": "java",
+        "name": "CalculatorApp",
+        "request": "launch",
+        "mainClass": "Labs.Lab5_Calculator.CalculatorApp",
+        "projectName": "COMP1008-26W_edd66e12"
+    },
     {
         "type": "java",
         "name": "JavaFXLearningActivity",
