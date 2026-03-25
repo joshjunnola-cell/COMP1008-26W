@@ -1,6 +1,5 @@
 package Labs.Lab5_Calculator;
 
-import java.awt.TextField;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,6 +29,8 @@ public class CalculatorApp extends Application {
         Label resultLabel = new Label("Results");
 
         // Step 4: HBox for buttons
+        HBox buttonRow = new HBox(10);
+        buttonRow.getChildren().addAll(btnAdd, btnSub, btnMul, btnDiv, btnEq, btnClear);
 
         // Step 5: VBox main layout
        
