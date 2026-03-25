@@ -27,9 +27,10 @@ public class CalculatorApp extends Application {
         Button btnClear = new Button("C");
  
         // Step 3: Create Label for result
+        Label resultLabel = new Label("Results");
 
         // Step 4: HBox for buttons
-       
+
         // Step 5: VBox main layout
        
         // Step 6: Event handling for buttons
