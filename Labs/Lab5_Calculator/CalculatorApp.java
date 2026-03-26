@@ -18,13 +18,20 @@ public class CalculatorApp extends Application {
     public void start(Stage primaryStage) {
 
         // Step 1: Create TextFields for input
-        TextField input = new TextField();
+        TextField firstNum = new TextField();
+        firstNum.setPromptText("Enter first number");
+
+        TextField secondNum = new TextField();
+        secondNum.setPromptText("Enter second number");
+
 
         // Step 2: Create Buttons for operations
         Button btnAdd = new Button("+");
         Button btnSub = new Button("-");
         Button btnMul = new Button("*");
         Button btnDiv = new Button("/");
+
+        //extra buttons
         Button btnEq = new Button("=");
         Button btnClear = new Button("C");
 
@@ -37,12 +44,13 @@ public class CalculatorApp extends Application {
 
         // Step 5: VBox main layout
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(input, resultLabel, buttonRow);
+        layout.getChildren().addAll(firstNum, secondNum, resultLabel, buttonRow);
 
         // Step 6: Event handling for buttons
         btnAdd.setOnAction(e -> {
             try {
-                firstNumber = Double.parseDouble(input.getText());
+                double firstNumber = Double.parseDouble(firstNum.getText());
+                double secondNumber = Double.parseDouble(secondNum.getText());
                 operator = "+";
                 input.clear();
 
