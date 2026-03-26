@@ -8,26 +8,26 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
- 
+
 public class CalculatorApp extends Application {
- 
+
     private String operator = "";
     private double firstNumber = 0;
 
     @Override
     public void start(Stage primaryStage) {
- 
+
         // Step 1: Create TextFields for input
         TextField input = new TextField();
- 
+
         // Step 2: Create Buttons for operations
         Button btnAdd = new Button("+");
         Button btnSub = new Button("-");
         Button btnMul = new Button("*");
         Button btnDiv = new Button("/");
-        Button btnEq  = new Button("=");
+        Button btnEq = new Button("=");
         Button btnClear = new Button("C");
- 
+
         // Step 3: Create Label for result
         Label resultLabel = new Label("Results");
 
@@ -91,14 +91,17 @@ public class CalculatorApp extends Application {
                 double result = 0;
 
                 switch (operator) {
-                    case "+": result = firstNumber + secondNumber;
-                    break;
+                    case "+":
+                        result = firstNumber + secondNumber;
+                        break;
 
-                    case "-": result = firstNumber - secondNumber;
-                    break;
+                    case "-":
+                        result = firstNumber - secondNumber;
+                        break;
 
-                    case "*": result = firstNumber * secondNumber;
-                    break;
+                    case "*":
+                        result = firstNumber * secondNumber;
+                        break;
 
                     case "/":
                         if (secondNumber == 0) {
@@ -117,7 +120,6 @@ public class CalculatorApp extends Application {
         });
 
         // clear button "C" reset everything
-
         btnClear.setOnAction(e -> {
             input.clear();
             firstNumber = 0;
@@ -126,25 +128,21 @@ public class CalculatorApp extends Application {
         });
 
         // Step 7: Create scene and show stage
-
         Scene scene = new Scene(layout, 350, 250);
- 
+
         primaryStage.setScene(scene);
         primaryStage.setTitle("Simple Calculator");
         primaryStage.show();
     }
- 
+
     public static void main(String[] args) {
         launch(args);
     }
 }
- 
+
 //TASKS TO COMPLETE(SUBMIT SCREENSHOTS FOR ALL TASKS)
- 
 //TODO:Enter numbers in the two TextFields.
- 
 //TODO:Click any operation button to see the result in the Label.
- 
 //TODO:Test for division by zero. 
  
 //TODO:Try entering invalid input (letters) and observe program behavior (optional: you can handle exceptions for invalid input).
