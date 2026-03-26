@@ -47,55 +47,16 @@ public class CalculatorApp extends Application {
         layout.getChildren().addAll(firstNum, secondNum, resultLabel, buttonRow);
 
         // Step 6: Event handling for buttons
-        btnAdd.setOnAction(e -> {
-            try {
-                double firstNumber = Double.parseDouble(firstNum.getText());
-                double secondNumber = Double.parseDouble(secondNum.getText());
-                operator = "+";
-                input.clear();
-
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Invalid Input");
-            }
-        });
-
-        btnSub.setOnAction(e -> {
-            try {
-                firstNumber = Double.parseDouble(input.getText());
-                operator = "-";
-                input.clear();
-
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Invalid Input");
-            }
-        });
-
-        btnMul.setOnAction(e -> {
-            try {
-                firstNumber = Double.parseDouble(input.getText());
-                operator = "*";
-                input.clear();
-
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Invalid Input");
-            }
-        });
-
-        btnDiv.setOnAction(e -> {
-            try {
-                firstNumber = Double.parseDouble(input.getText());
-                operator = "/";
-                input.clear();
-
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Invalid Input");
-            }
-        });
+        btnAdd.setOnAction(e -> operator = "+");
+        btnSub.setOnAction(e -> operator = "-");
+        btnMul.setOnAction(e -> operator = "*");
+        btnDiv.setOnAction(e -> operator = "/");
 
         // code for "=" button function
         btnEq.setOnAction(e -> {
             try {
-                double secondNumber = Double.parseDouble(input.getText());
+                double firstNumber = Double.parseDouble(firstNum.getText());
+                double secondNumber = Double.parseDouble(secondNum.getText());
                 double result = 0;
 
                 switch (operator) {
@@ -118,6 +79,10 @@ public class CalculatorApp extends Application {
                         }
                         result = firstNumber / secondNumber;
                         break;
+
+                    default:
+                        resultLabel.setText("Select an operator");
+                        return;
                 }
 
                 resultLabel.setText("Result: " + result);
@@ -129,8 +94,8 @@ public class CalculatorApp extends Application {
 
         // clear button "C" reset everything
         btnClear.setOnAction(e -> {
-            input.clear();
-            firstNumber = 0;
+            firstNum.clear();
+            secondNum.clear();
             operator = "";
             resultLabel.setText("Results");
         });
