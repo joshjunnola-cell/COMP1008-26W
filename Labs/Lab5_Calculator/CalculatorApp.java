@@ -13,6 +13,7 @@ public class CalculatorApp extends Application {
 
     private String operator = "";
     private double firstNumber = 0;
+    private double secondNumber = 0;
 
     @Override
     public void start(Stage primaryStage) {
